@@ -27,5 +27,7 @@
 	</dependencies>
 	<modules>
 		<module>web</module>
+		<module>api</module>
+		<module>service</module>
 	</modules>
 </project>
