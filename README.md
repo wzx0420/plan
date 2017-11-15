@@ -1,2 +1,2 @@
 # plan
-this is a plan project 。。。
+this is a springBoot project 。。。
