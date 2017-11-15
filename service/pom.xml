@@ -8,15 +8,16 @@
 		<artifactId>plan-master</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	
+
 	<artifactId>service</artifactId>
 	<name>service</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.wing.api.version>0.0.1-SNAPSHOT</project.wing.api.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -24,7 +25,14 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>com.wingteam.api</groupId>
+			<artifactId>api</artifactId>
+			<version>${project.wing.api.version}</version>
+		</dependency>
+
 	</dependencies>
-	
+
 	<groupId>com.wingteam.service</groupId>
 </project>

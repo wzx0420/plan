@@ -14,8 +14,22 @@
 	<artifactId>web</artifactId>
 	<name>busi Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.wing.api.version>0.0.1-SNAPSHOT</project.wing.api.version>
+		<project.spring.boot.version>1.5.7.RELEASE</project.spring.boot.version>
+		<project.druid.version>1.1.5</project.druid.version>
+	</properties>
 
 	<dependencies>
+		
+		<dependency>
+			<groupId>com.wingteam.api</groupId>
+			<artifactId>api</artifactId>
+			<version>${project.wing.api.version}</version>
+		</dependency>
+	
 		<!-- Spring Boot starter POMs -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -54,11 +68,6 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.spring.boot.version>1.5.7.RELEASE</project.spring.boot.version>
-		<project.druid.version>1.1.5</project.druid.version>
-	</properties>
 
 	<build>
 		<finalName>web</finalName>
