@@ -17,6 +17,7 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.servletapi.version>2.5</project.servletapi.version>
 		<project.junit.version>4.11</project.junit.version>
+		<project.sf4j.version>1.7.16</project.sf4j.version>
 	</properties>
 
 	<dependencies>
@@ -32,6 +33,13 @@
 			<artifactId>servlet-api</artifactId>
 			<version>${project.servletapi.version}</version>
 			<scope>provided</scope>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${project.sf4j.version}</version>
 		</dependency>
 	</dependencies>
 

@@ -19,7 +19,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.wing.api.version>0.0.1-SNAPSHOT</project.wing.api.version>
 		<project.spring.boot.version>1.5.7.RELEASE</project.spring.boot.version>
-		<project.druid.version>1.1.5</project.druid.version>
 	</properties>
 
 	<dependencies>
@@ -51,14 +50,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId> 
         </dependency>
-
-
-		<!-- druid-db POMs-->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
-			<version>${project.druid.version}</version>
-		</dependency>
 
 	</dependencies>
 
