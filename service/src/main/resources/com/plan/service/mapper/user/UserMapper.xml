@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.plan.service.mapper.user.UserMapper">
+	<sql id="column_name">
+		user_id,
+		user_name,
+		login_name,
+		login_pwd,
+		create_time,
+		update_time,
+		login_out_time
+	</sql>
+
+	<select id="login" parameterType="com.plan.api.model.UserInfo"
+		resultType="com.plan.api.model.UserInfo">
+		SELECT
+		<include refid="column_name" />
+		FROM tb_user
+		<where>
+			<if test="loginName != null and loginName !=''">
+				AND login_name = #{loginName,jdbcType=VARCHAR}
+			</if>
+			<if test="loginPwd != null and loginPwd !=''">
+				AND login_pwd = #{loginPwd,jdbcType=VARCHAR}
+			</if>
+		</where>
+	</select>
+</mapper>
