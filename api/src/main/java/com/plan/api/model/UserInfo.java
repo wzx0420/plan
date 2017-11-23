@@ -1,4 +1,4 @@
-package com.plan.api.entity;
+package com.plan.api.model;
 
 import java.util.Date;
 
