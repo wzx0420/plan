@@ -5,7 +5,7 @@
 
 	<groupId>com.wingwei</groupId>
 	<artifactId>plan-master</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 	<name>plan-master</name>
