@@ -15,16 +15,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.spring.boot.version>1.5.7.RELEASE</project.spring.boot.version>
 		<project.servletapi.version>2.5</project.servletapi.version>
-		<project.junit.version>4.11</project.junit.version>
-		<project.sf4j.version>1.7.16</project.sf4j.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${project.junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -35,13 +33,25 @@
 			<scope>provided</scope>
 		</dependency>
 		
-		
+		<!-- slf4j依赖 -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>${project.sf4j.version}</version>
 		</dependency>
 	</dependencies>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<!-- Import dependency management from Spring Boot -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${project.spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<modules>
 		<module>web</module>

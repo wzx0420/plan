@@ -1,7 +1,7 @@
 package com.plan.api.user;
 
-import com.plan.api.model.UserInfo;
+import com.plan.api.entity.UserInfo;
 
 public interface IUserService {
-	UserInfo Login(UserInfo userInfo);
+	UserInfo login(UserInfo userInfo);
 }

@@ -1,4 +1,4 @@
-package com.plan.api.model;
+package com.plan.api.entity;
 
 import java.util.Date;
 
@@ -8,7 +8,8 @@ import java.util.Date;
  * @author weizx
  * @date 2017-11-15
  */
-public class UserInfo {
+public class UserInfo implements java.io.Serializable {
+	private static final long serialVersionUID = 1L;
 	private Integer userId;
 	private String userName;
 	private String loginName;
