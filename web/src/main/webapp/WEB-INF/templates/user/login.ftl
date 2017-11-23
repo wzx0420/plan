@@ -88,13 +88,14 @@
 			            return false;
 			        }
 			        var pswd = MD5(username +"#" + password),
-			        	data = {pswd:pswd,email:username,rememberMe:$("#rememberMe").is(':checked')};
+			        	data = {loginPwd:pswd,loginName:username,rememberMe:$("#rememberMe").is(':checked')};
 			        var load = layer.load();
 			        
 			        $.ajax({
-			        	url:"${basePath}/u/submitLogin.shtml",
+			        	url:"${basePath}/user/submitLogin",
 			        	data:data,
 			        	type:"post",
+			        	contentType: "application/json",
 			        	dataType:"json",
 			        	beforeSend:function(){
 			        		layer.msg('开始登录，请注意后台控制台。');

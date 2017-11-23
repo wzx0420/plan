@@ -7,28 +7,31 @@
 	<parent>
 		<groupId>com.wingwei</groupId>
 		<artifactId>plan-master</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 
 	<groupId>com.wingteam.web</groupId>
 	<artifactId>web</artifactId>
 	<name>busi Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.wing.api.version>0.0.1-SNAPSHOT</project.wing.api.version>
-		<project.spring.boot.version>1.5.7.RELEASE</project.spring.boot.version>
+		<project.wing.api.version>1.0.0</project.wing.api.version>
+		<project.dubbo-spring-boot.version>1.0.0</project.dubbo-spring-boot.version>
+		<com.alibaba.dubbo.version>2.5.3</com.alibaba.dubbo.version>
+		<org.apache.zookeeper.version>3.4.6</org.apache.zookeeper.version>
+		<project.zookeeper-client.version>0.10</project.zookeeper-client.version>
+		<project.jackson.version>2.9.2</project.jackson.version>
 	</properties>
 
 	<dependencies>
-		
 		<dependency>
 			<groupId>com.wingteam.api</groupId>
 			<artifactId>api</artifactId>
 			<version>${project.wing.api.version}</version>
 		</dependency>
-	
+
 		<!-- Spring Boot starter POMs -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -39,40 +42,67 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-		</dependency> 
-		
-		<dependency>
- 			<groupId>org.springframework.boot</groupId>
-    		<artifactId>spring-boot-starter-jetty</artifactId>
 		</dependency>
-		
+
 		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-freemarker</artifactId> 
-        </dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jetty</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+
+		<!-- Spring Boot Dubbo 依赖 -->
+		<!-- dubbo -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring</artifactId>
+				</exclusion>
+			</exclusions>
+			<version>${com.alibaba.dubbo.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>${org.apache.zookeeper.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>${project.zookeeper-client.version}</version>
+		</dependency>
+
+		<!-- jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${project.jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${project.jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${project.jackson.version}</version>
+		</dependency>
 
 	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<!-- Import dependency management from Spring Boot -->
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-dependencies</artifactId>
-				<version>${project.spring.boot.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 
 	<build>
 		<finalName>web</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>				
+				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
