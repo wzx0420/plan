@@ -29,4 +29,5 @@
 	</bean>
 
 	<import resource="spring-mybatis.xml" />
+	<import resource="spring-dubbo.xml" />
 </beans>

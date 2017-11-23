@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.wingwei</groupId>
 		<artifactId>plan-master</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 
 	<artifactId>service</artifactId>
@@ -15,14 +15,17 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.wing.api.version>0.0.1-SNAPSHOT</project.wing.api.version>
-		<project.spring.version>4.2.2.RELEASE</project.spring.version>
+		<project.wing.api.version>1.0.0</project.wing.api.version>
+		<project.spring.version>4.3.11.RELEASE</project.spring.version>
 		<project.servletapi.version>2.5</project.servletapi.version>
 		<project.mysql.version>5.1.36</project.mysql.version>
 		<project.mybatis>3.2.8</project.mybatis>
 		<project.mybatis-spring>1.2.2</project.mybatis-spring>
 		<project.commons-lang3>3.1</project.commons-lang3>
 		<project.druid.version>1.1.5</project.druid.version>
+		<project.dubbo.version>2.5.3</project.dubbo.version>
+		<project.zookeeper-version>3.4.6</project.zookeeper-version>
+		<project.zookeeper-client.version>0.10</project.zookeeper-client.version>
 	</properties>
 
 	<dependencies>
@@ -37,17 +40,14 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
-			<version>${project.spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>${project.spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
-			<version>${project.spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -58,7 +58,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>${project.spring.version}</version>
 		</dependency>
 		<!-- mybatis -->
 		<dependency>
@@ -71,7 +70,7 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>${project.mybatis-spring}</version>
 		</dependency>
-		
+
 		<!-- servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -79,22 +78,47 @@
 			<version>${project.servletapi.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>${project.mysql.version}</version>
 		</dependency>
 
-		<!-- druid-db POMs-->
+		<!-- druid-db POMs -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 			<version>${project.druid.version}</version>
 		</dependency>
+
+		<!-- dubbox -->
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>${project.dubbo.version}</version>
+			<exclusions>
+                <exclusion>
+                    <artifactId>spring</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+            </exclusions>
+		</dependency>
+
+		<!-- zk -->
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>${project.zookeeper-version}</version>
+		</dependency>
 		
-		
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>${project.zookeeper-client.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<groupId>com.wingteam.service</groupId>

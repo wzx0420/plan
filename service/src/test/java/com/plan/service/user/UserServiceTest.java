@@ -25,7 +25,7 @@ public class UserServiceTest {
 		UserInfo user = new UserInfo();
 		user.setLoginName("admin");
 		user.setLoginPwd("admin");
-		UserInfo u = userService.Login(user);
+		UserInfo u = userService.login(user);
 		if (u == null) {
 			LOG.error("login error , user is not exists !");
 		} else {
