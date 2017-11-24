@@ -4,15 +4,15 @@
         <meta charset="utf-8">
         <title>登录</title>
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-        <link   rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
-		<link   rel="shortcut icon" href="${basePath}/favicon.ico" />
+        <link   rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<link   rel="shortcut icon" href="/favicon.ico" />
         <!-- CSS -->
-        <link rel="stylesheet" href="${basePath}/css/login/reset.css"/>
-        <link rel="stylesheet" href="${basePath}/css/login/supersized.css"/>
-        <link rel="stylesheet" href="${basePath}/css/login/style.css"/>
+        <link rel="stylesheet" href="/css/login/reset.css"/>
+        <link rel="stylesheet" href="/css/login/supersized.css"/>
+        <link rel="stylesheet" href="/css/login/style.css"/>
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
-            <script src="${basePath}/js/common/html5shiv.js"></script>
+            <script src="/js/common/html5shiv.js"></script>
         <![endif]-->
 		<style>
 			canvas{position: fixed; top: 0px; left: 0px; }
@@ -41,11 +41,11 @@
             </form>
         </div>
         <!-- Javascript -->
-        <script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
-        <script  src="${basePath}/js/common/MD5.js"></script>
-        <script  src="${basePath}/js/common/supersized.3.2.7.min.js"></script>
-        <script  src="${basePath}/js/common/supersized-init.js"></script>
-		<script  src="${basePath}/js/common/layer/layer.js"></script>
+        <script  src="/js/common/jquery/jquery1.8.3.min.js"></script>
+        <script  src="/js/common/MD5.js"></script>
+        <script  src="/js/common/supersized.3.2.7.min.js"></script>
+        <script  src="/js/common/supersized-init.js"></script>
+		<script  src="/js/common/layer/layer.js"></script>
         <script >
 			jQuery(document).ready(function() {
 				try{
@@ -88,15 +88,17 @@
 			            return false;
 			        }
 			        var pswd = MD5(username +"#" + password),
-			        	data = {loginPwd:pswd,loginName:username,rememberMe:$("#rememberMe").is(':checked')};
+			        <!-- ,rememberMe:$("#rememberMe").is(':checked') -->
+			        	data = {"loginPwd":pswd,"loginName":username};
+			        console.log(data);
 			        var load = layer.load();
 			        
 			        $.ajax({
-			        	url:"${basePath}/user/submitLogin",
-			        	data:data,
+			        	url:"/user/submitLogin",
+			        	data:JSON.stringify(data),
 			        	type:"post",
-			        	contentType: "application/json",
 			        	dataType:"json",
+			        	contentType: "application/json;charset=utf-8",
 			        	beforeSend:function(){
 			        		layer.msg('开始登录，请注意后台控制台。');
 			        	},
@@ -110,7 +112,7 @@
 				    			layer.msg('登录成功！');
 				    			setTimeout(function(){
 				    				//登录返回
-					    			window.location.href= result.back_url || "${basePath}/";
+					    			window.location.href= result.back_url || "/";
 				    			},1000)
 				    		}
 			        	},
@@ -125,7 +127,7 @@
 			    });
 			    //注册
 			    $("#register").click(function(){
-			    	window.location.href="register.shtml";
+			    	window.location.href="register.html";
 			    });
 			});
         </script>

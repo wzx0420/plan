@@ -1,8 +1,5 @@
 package com.plan.web.controller.user;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,24 +20,15 @@ public class UserController {
 	@Reference(version = "1.0.0", timeout = 3000)
 	private IUserService userService;
 
-	@PostMapping(WebConstants.SUBMIT_LOGIN)
-	public Map<String, String> login(@RequestBody UserInfo user) {
-		LOG.info("login method is go! params{}", user);
-		UserInfo userInfo = new UserInfo();
-		userInfo.setLoginName("admin");
-		userInfo.setLoginPwd("admin");
-
-		Map<String, String> map = new HashMap<>();
-		map.put("k", "I am king of the world !");
-		// userInfo.setLoginName(model.get("loginName") + "");
-		// userInfo.setLoginPwd(model.get("loginPwd") + "");
+	@PostMapping(value = WebConstants.SUBMIT_LOGIN, produces = "application/json;charset=UTF-8")
+	public UserInfo login(@RequestBody UserInfo user) {
+		LOG.info("login method is go! params :{}", user);
 		if (userService == null) {
-			LOG.error("dubbo registration error ! userService is null");
+			LOG.error("dubbo registration error ! userService is null !");
 			return null;
 		}
-		user = userService.login(userInfo);
-		LOG.info("userService login method result :{}" + user);
-		return map;
-		// return userService.login(userInfo);
+		UserInfo users = userService.login(user);
+		LOG.info("userService login method result :{}" + users);
+		return users;
 	}
 }
