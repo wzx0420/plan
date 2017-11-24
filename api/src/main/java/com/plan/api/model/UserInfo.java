@@ -65,4 +65,10 @@ public class UserInfo implements java.io.Serializable {
 		this.loginOutTime = loginOutTime;
 	}
 
+	@Override
+	public String toString() {
+		return "UserInfo [userId=" + userId + ", userName=" + userName + ", loginName=" + loginName + ", loginPwd="
+				+ loginPwd + ", createTime=" + createTime + ", loginOutTime=" + loginOutTime + "]";
+	}
+	
 }
