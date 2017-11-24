@@ -4,7 +4,7 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.wingwei</groupId>
+		<groupId>org.wingteam</groupId>
 		<artifactId>plan-master</artifactId>
 		<version>1.0.0</version>
 	</parent>
@@ -31,7 +31,7 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.wingteam.api</groupId>
+			<groupId>org.wingteam</groupId>
 			<artifactId>api</artifactId>
 			<version>${project.wing.api.version}</version>
 		</dependency>
@@ -121,5 +121,5 @@
 
 	</dependencies>
 
-	<groupId>com.wingteam.service</groupId>
+	<groupId>org.wingteam.service</groupId>
 </project>

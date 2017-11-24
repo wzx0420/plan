@@ -90,7 +90,6 @@ public class DubboConfiguration {
 		protocolConfig.setName(protocolName);
 		protocolConfig.setPort(protocolPort);
 		protocolConfig.setThreads(200);
-		System.out.println("默认protocolConfig：" + protocolConfig.hashCode());
 		return protocolConfig;
 	}
 

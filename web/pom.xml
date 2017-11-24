@@ -5,12 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.wingwei</groupId>
+		<groupId>org.wingteam</groupId>
 		<artifactId>plan-master</artifactId>
 		<version>1.0.0</version>
 	</parent>
 
-	<groupId>com.wingteam.web</groupId>
 	<artifactId>web</artifactId>
 	<name>busi Maven Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -27,8 +26,14 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.wingteam.api</groupId>
+			<groupId>org.wingteam</groupId>
 			<artifactId>api</artifactId>
+			<version>${project.wing.api.version}</version>
+		</dependency>
+		
+		<dependency> 
+			<groupId>org.wingteam</groupId>
+			<artifactId>common</artifactId>
 			<version>${project.wing.api.version}</version>
 		</dependency>
 
