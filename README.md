@@ -1,7 +1,7 @@
 # plan
 this is a Simple distributed project example。。。
 
-web客户端pc使用freemarket作为前端模板
+web客户端pc使用freemarker作为前端模板
                         使用springboot version=1.5.7作为mvc框架
 
 service服务端使用dubbo+zookeeper提供远程服务
